@@ -7,6 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="yellow">#FBC02D</color>
     <color name="orange">#E64A19</color>
+    <color name="viewpager">#F97044</color>
+    <color name="backgroundOnboarding">#FBE9BB</color>
+    <color name="text">#4D4C4C</color>
+    <color name="text2">#807C7C</color>
     <color name="light_background">#EFEFEF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

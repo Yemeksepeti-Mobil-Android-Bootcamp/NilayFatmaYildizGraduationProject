@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_first_onboarding.xml" value="0.1" />
+        <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_onboarding.xml" value="0.1" />
+        <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_second_onboarding.xml" value="0.1" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_splash.xml" value="0.18" />
+        <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_third_onboarding.xml" value="0.1" />
       </map>
     </option>
   </component>

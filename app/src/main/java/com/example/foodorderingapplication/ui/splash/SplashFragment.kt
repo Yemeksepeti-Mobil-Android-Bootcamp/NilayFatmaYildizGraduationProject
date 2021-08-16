@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.foodorderingapplication.R
 
 class SplashFragment : Fragment() {
@@ -16,6 +17,8 @@ class SplashFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         Handler(Looper.getMainLooper()).postDelayed({
+            val action = SplashFragmentDirections.actionSplashFragmentToOnboardingFragment()
+            findNavController().navigate(action)
         }, 5000)
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
