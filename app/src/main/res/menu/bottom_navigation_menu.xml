@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/order"
+        android:enabled="true"
+        android:icon="@drawable/order"
+        android:title="Order"/>
+    <item
+        android:id="@+id/search"
+        android:enabled="true"
+        android:icon="@drawable/search"
+        android:title="Search"/>
+    <item
+        android:id="@+id/basket"
+        android:enabled="true"
+        android:icon="@drawable/basket"
+        android:title="My Basket"/>
+    <item
+        android:id="@+id/other"
+        android:enabled="true"
+        android:icon="@drawable/other"
+        android:title="Other"/>
+</menu>

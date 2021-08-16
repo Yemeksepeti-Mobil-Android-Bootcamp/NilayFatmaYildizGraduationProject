@@ -1,4 +1,4 @@
-package com.example.foodorderingapplication.ui.onboarding
+package com.example.foodorderingapplication.ui.onboarding.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -10,6 +10,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.foodorderingapplication.R
 import com.example.foodorderingapplication.databinding.FragmentOnboardingBinding
+import com.example.foodorderingapplication.ui.onboarding.utils.ViewPagerAdapter
+import com.example.foodorderingapplication.ui.onboarding.utils.ZoomOutPageTransformer
 
 class OnboardingFragment : Fragment() {
     private lateinit var binding: FragmentOnboardingBinding
@@ -48,7 +50,8 @@ class OnboardingFragment : Fragment() {
                     binding.prevButton.visibility = View.VISIBLE
                     binding.nextButton.text = resources.getText(R.string.finish)
                     binding.nextButton.setOnClickListener {
-                        val action = OnboardingFragmentDirections.actionOnboardingFragmentToHomeFragment()
+                        val action =
+                            OnboardingFragmentDirections.actionOnboardingFragmentToHomeFragment()
                         findNavController().navigate(action)
                         onBoardingFinished()
                     }

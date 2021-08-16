@@ -1,4 +1,4 @@
-package com.example.foodorderingapplication.ui.onboarding
+package com.example.foodorderingapplication.ui.onboarding.fragments
 
 import android.content.Context
 import android.os.Bundle

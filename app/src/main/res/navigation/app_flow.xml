@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
-        android:name="com.example.foodorderingapplication.ui.onboarding.OnboardingFragment"
+        android:name="com.example.foodorderingapplication.ui.onboarding.fragments.OnboardingFragment"
         android:label="OnboardingFragment" >
         <action
             android:id="@+id/action_onboardingFragment_to_homeFragment"
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.foodorderingapplication.ui.LoginFragment"
+        android:name="com.example.foodorderingapplication.ui.login.LoginFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_login" />
 </navigation>
