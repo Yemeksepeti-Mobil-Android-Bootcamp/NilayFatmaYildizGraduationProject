@@ -12,6 +12,10 @@ import com.example.foodorderingapplication.R
 import com.example.foodorderingapplication.data.entity.restaurants.RestaurantItem
 import com.example.foodorderingapplication.databinding.FragmentRestaurantListBinding
 import com.example.foodorderingapplication.ui.listeners.IRestaurantClickListener
+import com.example.foodorderingapplication.ui.restaurant_onboarding.FirstOfferFragment
+import com.example.foodorderingapplication.ui.restaurant_onboarding.RestaurantOnboardingAdapter
+import com.example.foodorderingapplication.ui.restaurant_onboarding.SecondOfferFragment
+import com.example.foodorderingapplication.ui.restaurant_onboarding.ThirdOfferFragment
 import com.example.foodorderingapplication.utils.Resource
 import com.example.foodorderingapplication.utils.gone
 import com.example.foodorderingapplication.utils.show
@@ -52,6 +56,22 @@ class RestaurantListFragment : Fragment() {
                 }
             }
         })
+        initViewPager()
+    }
+
+    private fun initViewPager() {
+
+        val fragmentList = arrayListOf(
+            FirstOfferFragment(),
+            SecondOfferFragment(),
+            ThirdOfferFragment()
+        )
+        val adapter =
+            RestaurantOnboardingAdapter(fragmentList, requireActivity().supportFragmentManager, lifecycle)
+        _binding.apply {
+            viewPager.adapter = adapter
+            dotsIndicator.setViewPager2(viewPager)
+        }
     }
 
     private fun initViews() {
