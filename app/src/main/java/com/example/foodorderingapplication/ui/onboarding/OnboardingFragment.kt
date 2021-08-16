@@ -1,10 +1,12 @@
 package com.example.foodorderingapplication.ui.onboarding
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.foodorderingapplication.R
 import com.example.foodorderingapplication.databinding.FragmentOnboardingBinding
@@ -46,9 +48,9 @@ class OnboardingFragment : Fragment() {
                     binding.prevButton.visibility = View.VISIBLE
                     binding.nextButton.text = resources.getText(R.string.finish)
                     binding.nextButton.setOnClickListener {
-                        //SharedPrefManager(requireContext()).setOnboardingSeen()
-                        //findNavController().navigate(R.id.action_onboardingFragment_to_loginAndSignupFragment)
-
+                        val action = OnboardingFragmentDirections.actionOnboardingFragmentToHomeFragment()
+                        findNavController().navigate(action)
+                        onBoardingFinished()
                     }
                 } else {
                     binding.prevButton.visibility = View.VISIBLE
@@ -66,6 +68,11 @@ class OnboardingFragment : Fragment() {
         })
 
     }
-
+    private fun onBoardingFinished(){
+        val sharedPref=requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        val editor =sharedPref.edit()
+        editor.putBoolean("Finished",true)
+        editor.apply()
+    }
 
 }
