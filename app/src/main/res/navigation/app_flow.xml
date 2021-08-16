@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/restaurantListFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -14,20 +14,16 @@
             android:id="@+id/action_splashFragment_to_onboardingFragment"
             app:destination="@id/onboardingFragment" />
         <action
-            android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_splashFragment_to_restaurantListFragment"
+            app:destination="@id/restaurantListFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.example.foodorderingapplication.ui.onboarding.fragments.OnboardingFragment"
-        android:label="OnboardingFragment" >
-        <action
-            android:id="@+id/action_onboardingFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        android:label="OnboardingFragment" />
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.foodorderingapplication.ui.login.LoginFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_login" />
+        android:id="@+id/restaurantListFragment"
+        android:name="com.example.foodorderingapplication.ui.restaurant.RestaurantListFragment"
+        android:label="fragment_restaurant_list"
+        tools:layout="@layout/fragment_restaurant_list" />
 </navigation>
