@@ -1,4 +1,4 @@
-package com.example.foodorderingapplication.ui.restaurant
+package com.example.foodorderingapplication.ui.restaurant_detail
 
 import android.os.Bundle
 import android.util.Log
@@ -7,11 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodorderingapplication.R
+import com.example.foodorderingapplication.data.entity.meals.MealsItem
 import com.example.foodorderingapplication.data.entity.restaurants.RestaurantItem
+import com.example.foodorderingapplication.databinding.FragmentRestaurantDetailBinding
 import com.example.foodorderingapplication.databinding.FragmentRestaurantListBinding
+import com.example.foodorderingapplication.ui.listeners.IMealClickListener
 import com.example.foodorderingapplication.ui.listeners.IRestaurantClickListener
+import com.example.foodorderingapplication.ui.restaurant_list.RestaurantListAdapter
+import com.example.foodorderingapplication.ui.restaurant_list.RestaurantListViewModel
 import com.example.foodorderingapplication.ui.restaurant_onboarding.FirstOfferFragment
 import com.example.foodorderingapplication.ui.restaurant_onboarding.RestaurantOnboardingAdapter
 import com.example.foodorderingapplication.ui.restaurant_onboarding.SecondOfferFragment
@@ -22,33 +28,34 @@ import com.example.foodorderingapplication.utils.show
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RestaurantListFragment : Fragment() {
+class RestaurantDetailFragment : Fragment() {
 
-    private lateinit var _binding: FragmentRestaurantListBinding
-    private val viewModel: RestaurantListViewModel by viewModels()
+    private lateinit var _binding: FragmentRestaurantDetailBinding
+    private val viewModel: MealListViewModel by viewModels()
 
-    private val restaurantListAdapter = RestaurantListAdapter()
+    private val args: RestaurantDetailFragmentArgs by navArgs()
+    private val mealListAdapter = MealListAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentRestaurantListBinding.inflate(inflater, container, false)
+        _binding = FragmentRestaurantDetailBinding.inflate(inflater, container, false)
         return _binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.fetchRestaurantList().observe(viewLifecycleOwner, {
+        viewModel.fetchMealList(args.id!!).observe(viewLifecycleOwner, {
             when (it.status) {
                 Resource.Status.LOADING -> {
                     _binding.progressBar.show()
                 }
                 Resource.Status.SUCCESS -> {
                     _binding.progressBar.gone()
-                    Log.v("RestaurantList", "${it.data}")
-                    restaurantListAdapter.setData(it.data)
+                    Log.v("MealList", "${it.data}")
+                    mealListAdapter.setData(it.data)
                     initViews()
                 }
                 Resource.Status.ERROR -> {
@@ -56,30 +63,14 @@ class RestaurantListFragment : Fragment() {
                 }
             }
         })
-        initViewPager()
-    }
-
-    private fun initViewPager() {
-
-        val fragmentList = arrayListOf(
-            FirstOfferFragment(),
-            SecondOfferFragment(),
-            ThirdOfferFragment()
-        )
-        val adapter =
-            RestaurantOnboardingAdapter(fragmentList, requireActivity().supportFragmentManager, lifecycle)
-        _binding.apply {
-            viewPager.adapter = adapter
-            dotsIndicator.setViewPager2(viewPager)
-        }
     }
 
     private fun initViews() {
-        _binding.restaurantsRecyclerView.adapter = restaurantListAdapter
-        _binding.restaurantsRecyclerView.layoutManager = LinearLayoutManager(context)
+        _binding.mealsRecyclerView.adapter = mealListAdapter
+        _binding.mealsRecyclerView.layoutManager = LinearLayoutManager(context)
 
-        restaurantListAdapter.setRestaurantOnClickListener(object : IRestaurantClickListener {
-            override fun onClick(name: RestaurantItem) {
+        mealListAdapter.setMealOnClickListener(object : IMealClickListener {
+            override fun onClick(name: MealsItem) {
 
                 Log.v("Error", "Error olmuyoooor")
                 /*val action =

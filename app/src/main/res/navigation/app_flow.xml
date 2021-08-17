@@ -23,7 +23,21 @@
         android:label="OnboardingFragment" />
     <fragment
         android:id="@+id/restaurantListFragment"
-        android:name="com.example.foodorderingapplication.ui.restaurant.RestaurantListFragment"
+        android:name="com.example.foodorderingapplication.ui.restaurant_list.RestaurantListFragment"
         android:label="fragment_restaurant_list"
-        tools:layout="@layout/fragment_restaurant_list" />
+        tools:layout="@layout/fragment_restaurant_list" >
+        <action
+            android:id="@+id/action_restaurantListFragment_to_restaurantDetailFragment"
+            app:destination="@id/restaurantDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantDetailFragment"
+        android:name="com.example.foodorderingapplication.ui.restaurant_detail.RestaurantDetailFragment"
+        android:label="fragment_restaurant_detail"
+        tools:layout="@layout/fragment_restaurant_detail" >
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.foodorderingapplication.ui.restaurant
+package com.example.foodorderingapplication.ui.restaurant_list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
