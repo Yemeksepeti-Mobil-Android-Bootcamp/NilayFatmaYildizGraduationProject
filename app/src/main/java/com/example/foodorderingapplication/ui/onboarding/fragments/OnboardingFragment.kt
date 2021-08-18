@@ -50,9 +50,9 @@ class OnboardingFragment : Fragment() {
                     binding.prevButton.visibility = View.VISIBLE
                     binding.nextButton.text = resources.getText(R.string.finish)
                     binding.nextButton.setOnClickListener {
-                        //val action =
-                            //OnboardingFragmentDirections.actionOnboardingFragmentToHomeFragment()
-                        //findNavController().navigate(action)
+                        val action =
+                            OnboardingFragmentDirections.actionOnboardingFragmentToRestaurantListFragment()
+                        findNavController().navigate(action)
                         onBoardingFinished()
                     }
                 } else {

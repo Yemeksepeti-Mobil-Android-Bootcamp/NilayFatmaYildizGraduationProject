@@ -89,7 +89,7 @@ class SearchFragment : Fragment() {
 
                 Log.v("Error", "Error olmuyoooor")
                 val action =
-                    RestaurantListFragmentDirections.actionRestaurantListFragmentToRestaurantDetailFragment(
+                    SearchFragmentDirections.actionSearchFragmentToRestaurantDetailFragment(
                         name.id
                     )
                 findNavController().navigate(action)
