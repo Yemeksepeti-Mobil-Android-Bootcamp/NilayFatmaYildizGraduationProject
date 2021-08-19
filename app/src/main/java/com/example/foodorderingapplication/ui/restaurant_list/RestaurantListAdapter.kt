@@ -3,6 +3,7 @@ package com.example.foodorderingapplication.ui.restaurant_list
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.foodorderingapplication.data.entity.restaurant.Restaurant
 import com.example.foodorderingapplication.databinding.ItemRestaurantBinding
 import com.example.foodorderingapplication.ui.listeners.IRestaurantClickListener
@@ -19,6 +20,8 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.Restaur
         fun bind(RestaurantItem: Restaurant, listener: IRestaurantClickListener?) {
             binding.restaurantName.text = RestaurantItem.name
             binding.restaurantAddress.text = RestaurantItem.district
+            Glide.with(binding.restaurantImageView.context)
+                .load(RestaurantItem.image).into(binding.restaurantImageView)
             binding.itemRestaurantCardView.setOnClickListener { listener?.onClick(RestaurantItem) }
         }
     }

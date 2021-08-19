@@ -7,7 +7,7 @@
     tools:context=".ui.restaurant_detail.RestaurantDetailFragment">
 
     <ImageView
-        android:id="@+id/imageViewHospital"
+        android:id="@+id/imageViewRestaurant"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/search"
@@ -28,7 +28,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewHospital" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewRestaurant" />
+
+    <TextView
+        android:id="@+id/textViewRestaurantlAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:text="Restaurant Name"
+        android:textColor="@color/text"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRestaurantlName" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mealsRecyclerView"
@@ -37,7 +51,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRestaurantlName" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewRestaurantlAddress" />
 
     <ProgressBar
         android:id="@+id/progressBar"

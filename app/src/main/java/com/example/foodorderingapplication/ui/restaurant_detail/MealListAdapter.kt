@@ -3,13 +3,16 @@ package com.example.foodorderingapplication.ui.restaurant_detail
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.example.foodorderingapplication.R
 import com.example.foodorderingapplication.data.entity.meal.Meal
 import com.example.foodorderingapplication.databinding.ItemMealBinding
 import com.example.foodorderingapplication.ui.listeners.IMealClickListener
 
 class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
 
-    var mealList = ArrayList<Meal>()
+    private var mealList = ArrayList<Meal>()
 
     private var listener: IMealClickListener? = null
 
@@ -19,6 +22,8 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
         fun bind(MealItem: Meal, listener: IMealClickListener?) {
             binding.mealName.text = MealItem.name
             binding.mealPrice.text = MealItem.price
+            Glide.with(binding.mealImageView.context)
+                .load(MealItem.image).into(binding.mealImageView)
             binding.itemMealCardView.setOnClickListener { listener?.onClick(MealItem) }
         }
     }
