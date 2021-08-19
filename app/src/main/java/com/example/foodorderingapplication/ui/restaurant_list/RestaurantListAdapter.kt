@@ -3,24 +3,22 @@ package com.example.foodorderingapplication.ui.restaurant_list
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.foodorderingapplication.data.entity.restaurants.RestaurantItem
-import com.example.foodorderingapplication.data.entity.restaurants.Restaurants
+import com.example.foodorderingapplication.data.entity.restaurant.Restaurant
 import com.example.foodorderingapplication.databinding.ItemRestaurantBinding
 import com.example.foodorderingapplication.ui.listeners.IRestaurantClickListener
 
 class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.RestaurantViewHolder>() {
 
-    var restaurantList: Restaurants? = null
+    lateinit var restaurantList: List<Restaurant>
 
     private var listener: IRestaurantClickListener? = null
 
     class RestaurantViewHolder(val binding: ItemRestaurantBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(RestaurantItem: RestaurantItem, listener: IRestaurantClickListener?) {
+        fun bind(RestaurantItem: Restaurant, listener: IRestaurantClickListener?) {
             binding.restaurantName.text = RestaurantItem.name
-            binding.restaurantAddress.text = RestaurantItem.address
-            binding.restaurantScore.text = RestaurantItem.score
+            binding.restaurantAddress.text = RestaurantItem.district
             binding.itemRestaurantCardView.setOnClickListener { listener?.onClick(RestaurantItem) }
         }
     }
@@ -45,8 +43,10 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.Restaur
         return restaurantList!!.size
     }
 
-    fun setData(newList: Restaurants?) {
-        restaurantList = newList
+    fun setData(newList: List<Restaurant>?) {
+        if (newList != null) {
+            restaurantList = newList
+        }
         notifyDataSetChanged()
     }
 

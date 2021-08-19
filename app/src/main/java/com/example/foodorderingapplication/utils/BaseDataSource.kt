@@ -5,7 +5,6 @@ import retrofit2.Response
 abstract class BaseDataSource {
     protected suspend fun <T> getResult(call: suspend () -> Response<T>): Resource<T> {
         try {
-
             val response = call()
             if (response.isSuccessful) {
                 val body = response.body()

@@ -1,22 +1,71 @@
 package com.example.foodorderingapplication.repository
 
+import com.example.foodorderingapplication.data.entity.local.LocalDataSource
+import com.example.foodorderingapplication.data.entity.login.LoginRequest
+import com.example.foodorderingapplication.data.entity.order.OrderAddRequest
+import com.example.foodorderingapplication.data.entity.profile.UserRequest
+import com.example.foodorderingapplication.data.entity.remote.AuthRemoteDataSource
 import com.example.foodorderingapplication.data.entity.remote.RemoteDataSource
+import com.example.foodorderingapplication.utils.performAuthTokenNetworkOperation
 import com.example.foodorderingapplication.utils.performNetworkOperation
 import javax.inject.Inject
 
 class ApiRepository @Inject constructor(
     private var remoteDataSource: RemoteDataSource,
-){
+    private var authRemoteDataSource: AuthRemoteDataSource,
+    private var localDataSource: LocalDataSource
+) {
 
-    fun getRestaurantList() = performNetworkOperation {
-        remoteDataSource.fetchRestaurants()
+    fun login(request: LoginRequest) = performAuthTokenNetworkOperation(
+        call = {
+            remoteDataSource.postLogin(request)
+        },
+        saveToken = {
+            localDataSource.saveToken(it)
+        }
+    )
+
+    fun getRestaurants() =
+        performNetworkOperation {
+            remoteDataSource.getRestaurants()
+        }
+
+    fun getRestaurantById(id: String) =
+        performNetworkOperation {
+            remoteDataSource.getRestaurantById(id)
+        }
+
+    fun getMealById(id: String) =
+        performNetworkOperation {
+            remoteDataSource.getMealById(id)
+        }
+
+    fun getRestaurantByCuisine(cuisine: String) =
+        performNetworkOperation {
+            remoteDataSource.getRestaurantsByCuisine(cuisine)
+        }
+
+
+    fun getOrder() =
+        performNetworkOperation {
+            authRemoteDataSource.getOrders()
+        }
+
+    fun getUser() = performNetworkOperation {
+        authRemoteDataSource.getUser()
     }
 
-    fun getMealList(id:String) = performNetworkOperation {
-        remoteDataSource.fetchMeals(id)
+    fun updateUser(user : UserRequest) = performNetworkOperation {
+        authRemoteDataSource.updateUser(request = user)
     }
 
-    fun getSearchList(search: String) = performNetworkOperation {
-        remoteDataSource.searchRestaurants(search)
+    fun postOrder(orderAddRequest: OrderAddRequest) =
+        performNetworkOperation {
+            authRemoteDataSource.postOrder(orderAddRequest)
+        }
+
+    fun logOut() {
+        localDataSource.saveToken("")
     }
+
 }

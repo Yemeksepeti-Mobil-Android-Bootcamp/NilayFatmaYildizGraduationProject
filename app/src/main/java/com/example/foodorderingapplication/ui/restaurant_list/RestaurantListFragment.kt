@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.foodorderingapplication.data.entity.restaurants.RestaurantItem
+import com.example.foodorderingapplication.data.entity.restaurant.Restaurant
 import com.example.foodorderingapplication.databinding.FragmentRestaurantListBinding
 import com.example.foodorderingapplication.ui.listeners.IRestaurantClickListener
 import com.example.foodorderingapplication.ui.restaurant_onboarding.FirstOfferFragment
@@ -40,15 +40,15 @@ class RestaurantListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.fetchRestaurantList().observe(viewLifecycleOwner, {
+        viewModel.getRestaurants().observe(viewLifecycleOwner, {
             when (it.status) {
                 Resource.Status.LOADING -> {
                     _binding.progressBar.show()
                 }
                 Resource.Status.SUCCESS -> {
                     _binding.progressBar.gone()
-                    Log.v("RestaurantList", "${it.data}")
-                    restaurantListAdapter.setData(it.data)
+                    viewModel.restaurantList = it.data?.restaurantList
+                    setRestaurants(viewModel.restaurantList)
                     initViews()
                 }
                 Resource.Status.ERROR -> {
@@ -58,6 +58,11 @@ class RestaurantListFragment : Fragment() {
         })
         initViewPager()
     }
+    private fun setRestaurants(restaurantList: List<Restaurant>?) {
+        restaurantListAdapter.setData(restaurantList)
+        _binding.restaurantsRecyclerView.adapter = restaurantListAdapter
+    }
+
 
     private fun initViewPager() {
 
@@ -79,7 +84,7 @@ class RestaurantListFragment : Fragment() {
         _binding.restaurantsRecyclerView.layoutManager = LinearLayoutManager(context)
 
         restaurantListAdapter.setRestaurantOnClickListener(object : IRestaurantClickListener {
-            override fun onClick(name: RestaurantItem) {
+            override fun onClick(name: Restaurant) {
 
                 Log.v("Error", "Error olmuyoooor")
                 val action =
