@@ -61,6 +61,11 @@ class RegisterFragment : Fragment() {
 
                     })
         }
+        _binding.textViewHaveAnAccount.setOnClickListener {
+            val action =
+                RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
+            findNavController().navigate(action)
+        }
     }
 
 }

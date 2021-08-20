@@ -4,33 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:padding="16dp"
+    android:background="@drawable/background_color"
     tools:context=".ui.login.LoginFragment">
-
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/topAppBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/top_app_bar"
-        app:titleTextColor="@color/white">
-
-        <TextView
-            android:id="@+id/textViewAppName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/open_sans_semi_bold_italic"
-            android:padding="5dp"
-            android:text="@string/sign_in"
-            android:textColor="@color/background"
-            android:textSize="28sp" />
-
-    </com.google.android.material.appbar.MaterialToolbar>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/itemLoginCardView"
@@ -39,16 +15,17 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="25dp"
-        android:backgroundTint="@color/white"
-        app:cardCornerRadius="100dp"
+        android:backgroundTint="@color/card_background"
+        app:cardCornerRadius="50dp"
         app:cardElevation="10dp"
         app:contentPadding="20dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayoutLoginTitle"
@@ -58,10 +35,10 @@
 
             <ImageView
                 android:id="@+id/loginIcon"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
                 android:layout_marginLeft="30dp"
-                android:src="@drawable/login" />
+                android:src="@drawable/login1" />
 
             <TextView
                 android:id="@+id/textSignIn"
@@ -71,7 +48,7 @@
                 android:layout_marginLeft="15dp"
                 android:fontFamily="@font/open_sans_bold"
                 android:text="@string/sign_in"
-                android:textColor="@color/text"
+                android:textColor="@color/white"
                 android:textSize="40sp" />
         </LinearLayout>
 
@@ -96,8 +73,8 @@
                 android:id="@+id/loginEmailTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="35dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="35dp"
                 android:layout_weight="15"
                 android:background="@drawable/et_border"
@@ -105,6 +82,7 @@
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/open_sans_light"
                 android:hint="@string/email"
+                android:textColorHint="@color/text2"
                 android:inputType="textEmailAddress"
                 android:padding="15dp"
                 android:paddingStart="20dp"
@@ -125,6 +103,7 @@
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/open_sans_light"
                 android:hint="@string/password"
+                android:textColorHint="@color/text2"
                 android:inputType="textPassword"
                 android:padding="15dp"
                 android:paddingStart="20dp"
@@ -151,7 +130,7 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:backgroundTint="@color/red"
+        app:backgroundTint="@color/card_background"
         app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -163,7 +142,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="156dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/et_border"
         android:fontFamily="@font/open_sans_regular"
         android:padding="12dp"
@@ -172,10 +151,10 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:backgroundTint="@color/text2"
+        app:backgroundTint="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar

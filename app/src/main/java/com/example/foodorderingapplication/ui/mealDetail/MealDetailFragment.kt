@@ -27,7 +27,6 @@ class MealDetailFragment : Fragment() {
     private val args: MealDetailFragmentArgs by navArgs()
     private val viewModel: MealDetailsViewModel by viewModels()
     private lateinit var _binding: FragmentMealDetailBinding
-    // private var adapter: MealIngredientsAdapter = MealIngredientsAdapter()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -115,7 +114,9 @@ class MealDetailFragment : Fragment() {
                     Resource.Status.SUCCESS -> {
                         setLoading(false)
                         _binding.ingredientsRecyclerView.show()
-                        //findNavController().navigate(MealDetailFragmentDirections.actionMealDetailFragmentToRestaurantListFragment())
+                        val action =
+                            MealDetailFragmentDirections.actionMealDetailFragmentToOrderFragment()
+                            findNavController().navigate(action)
 
                     }
                     Resource.Status.ERROR -> {

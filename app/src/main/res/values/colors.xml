@@ -5,10 +5,10 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="yellow">#FFD740</color>
+    <color name="yellow">#FDD835</color>
     <color name="orange">#FF6E40</color>
     <color name="red">#CC0000</color>
-    <color name="background1">#FFE1AF</color>
+    <color name="card_background">#FFDC8F</color>
     <color name="backgroundOnboarding">#FBE9BB</color>
     <color name="text">#4D4C4C</color>
     <color name="text2">#807C7C</color>
