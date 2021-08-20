@@ -38,11 +38,12 @@ class LoginFragment : Fragment() {
             val password = _binding.loginPasswordTextView.text.toString()
             viewModel.login(email, password).observe(viewLifecycleOwner, Observer {
                 when (it.status) {
+
                     Resource.Status.LOADING -> {
-                        _binding.progressBar.show()
+                        _binding.progressBar.gone()
                     }
                     Resource.Status.SUCCESS -> {
-                        _binding.progressBar.gone()
+                        _binding.progressBar.show()
                             val action=LoginFragmentDirections.actionLoginFragmentToRestaurantListFragment()
                             findNavController().navigate(action)
                         }
