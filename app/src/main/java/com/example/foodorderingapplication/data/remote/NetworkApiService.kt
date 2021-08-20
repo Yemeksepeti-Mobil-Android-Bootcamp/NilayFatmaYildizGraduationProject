@@ -1,8 +1,10 @@
-package com.example.foodorderingapplication.data.entity.remote
+package com.example.foodorderingapplication.data.remote
 
 import com.example.foodorderingapplication.data.entity.login.LoginRequest
 import com.example.foodorderingapplication.data.entity.login.LoginResponse
 import com.example.foodorderingapplication.data.entity.meal.MealResponse
+import com.example.foodorderingapplication.data.entity.register.RegisterRequest
+import com.example.foodorderingapplication.data.entity.register.RegisterResponse
 import com.example.foodorderingapplication.data.entity.restaurant.RestaurantListResponse
 import com.example.foodorderingapplication.data.entity.restaurant.RestaurantResponse
 import retrofit2.Response
@@ -23,4 +25,7 @@ interface NetworkApiService {
 
     @POST("auth/login")
     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
+
+    @POST("auth/register")
+    suspend fun register(@Body request: RegisterRequest): Response<RegisterResponse>
 }

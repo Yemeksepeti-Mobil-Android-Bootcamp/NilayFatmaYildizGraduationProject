@@ -1,6 +1,7 @@
-package com.example.foodorderingapplication.data.entity.remote
+package com.example.foodorderingapplication.data.remote
 
 import com.example.foodorderingapplication.data.entity.login.LoginRequest
+import com.example.foodorderingapplication.data.entity.register.RegisterRequest
 import com.example.foodorderingapplication.utils.BaseDataSource
 import javax.inject.Inject
 
@@ -19,4 +20,7 @@ class RemoteDataSource @Inject constructor(private val apiService: NetworkApiSer
         apiService.login(request)
     }
 
+    suspend fun postRegister(request: RegisterRequest) = getResult {
+        apiService.register(request)
+    }
 }

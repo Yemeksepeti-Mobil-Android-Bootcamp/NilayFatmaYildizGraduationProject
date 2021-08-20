@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:layout_margin="10dp"
-    app:contentPadding="10dp"
     app:cardCornerRadius="20dp"
+    android:layout_margin="10dp"
+    app:contentPadding="5dp"
     app:cardElevation="10dp">
 
     <LinearLayout
@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/restaurantImageView"
-            android:layout_width="128dp"
-            android:layout_height="128dp" />
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -33,8 +33,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="10dp"
                 android:text="Restaurant Name"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="20sp"/>
+                android:fontFamily="@font/open_sans_regular"
+                android:textSize="18sp"/>
 
 
             <TextView
@@ -44,18 +44,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="10dp"
                 android:textSize="15sp"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Hospital Address" />
-
-            <TextView
-                android:id="@+id/restaurant_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="10dp"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Restaurant Score" />
+                android:fontFamily="@font/open_sans_regular"
+                android:text="Restaurant Address" />
 
 
         </LinearLayout>

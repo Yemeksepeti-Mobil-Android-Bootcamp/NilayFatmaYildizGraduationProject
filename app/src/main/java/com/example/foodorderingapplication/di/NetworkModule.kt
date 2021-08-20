@@ -2,10 +2,10 @@ package com.example.foodorderingapplication.di
 
 import androidx.viewbinding.BuildConfig
 import com.example.foodorderingapplication.data.entity.local.LocalDataSource
-import com.example.foodorderingapplication.data.entity.remote.AuthAPIService
-import com.example.foodorderingapplication.data.entity.remote.AuthRemoteDataSource
-import com.example.foodorderingapplication.data.entity.remote.NetworkApiService
-import com.example.foodorderingapplication.data.entity.remote.RemoteDataSource
+import com.example.foodorderingapplication.data.remote.AuthAPIService
+import com.example.foodorderingapplication.data.remote.AuthRemoteDataSource
+import com.example.foodorderingapplication.data.remote.NetworkApiService
+import com.example.foodorderingapplication.data.remote.RemoteDataSource
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides

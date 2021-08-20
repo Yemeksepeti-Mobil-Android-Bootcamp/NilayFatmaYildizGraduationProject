@@ -1,4 +1,4 @@
-package com.example.foodorderingapplication.data.entity.remote
+package com.example.foodorderingapplication.data.remote
 
 import com.example.foodorderingapplication.data.entity.order.OrderAddRequest
 import com.example.foodorderingapplication.data.entity.profile.UserRequest

@@ -10,4 +10,13 @@
     <string name="enjoy_your_meal">Enjoy your meal</string>
     <string name="choose_the_food_you_want_to_eat">Choose the food you want to eat</string>
     <string name="choose_the_food_you_want_to_eat_from_the_restaurant_of_your_choice">Choose the food you want to eat from the restaurant of your choice</string>
+    <string name="please_enter_your_account_here">Please enter your account here</string>
+    <string name="sign_in">Sign in</string>
+    <string name="foodizone">Foodizone</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="please_enter_your_informations_for_register">Please enter your informations for register</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>

@@ -21,7 +21,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,7 +37,11 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.splashFragment -> bottomNav.hide()
-                //R.id.onboardingFragment -> bottomNav.hide()
+                R.id.restaurantDetailFragment->bottomNav.hide()
+                R.id.mealDetailFragment->bottomNav.hide()
+                R.id.onboardingFragment->bottomNav.hide()
+                R.id.loginFragment->bottomNav.hide()
+                R.id.registerFragment->bottomNav.hide()
 
                 else -> bottomNav.show()
             }

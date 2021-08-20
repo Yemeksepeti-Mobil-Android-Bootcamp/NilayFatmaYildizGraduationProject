@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -73,12 +74,12 @@ class RestaurantDetailFragment: Fragment(){
         _binding.mealsRecyclerView.layoutManager = LinearLayoutManager(context)
         mealListAdapter.setMealOnClickListener(object:IMealClickListener{
             override fun onClick(name: Meal) {
-                //val action =
-                    //RestaurantDetailFragmentDirections.actionRestaurantDetailFragmentToMealDetailFragment(
-                        //name.id,
-                        //args.id.toString()
-                    //
-                //findNavController().navigate(action)
+                val action =
+                    RestaurantDetailFragmentDirections.actionRestaurantDetailFragmentToMealDetailFragment(
+                        name.id,
+                        args.id.toString()
+                    )
+                findNavController().navigate(action)
             }
 
         })

@@ -4,8 +4,9 @@ import com.example.foodorderingapplication.data.entity.local.LocalDataSource
 import com.example.foodorderingapplication.data.entity.login.LoginRequest
 import com.example.foodorderingapplication.data.entity.order.OrderAddRequest
 import com.example.foodorderingapplication.data.entity.profile.UserRequest
-import com.example.foodorderingapplication.data.entity.remote.AuthRemoteDataSource
-import com.example.foodorderingapplication.data.entity.remote.RemoteDataSource
+import com.example.foodorderingapplication.data.entity.register.RegisterRequest
+import com.example.foodorderingapplication.data.remote.AuthRemoteDataSource
+import com.example.foodorderingapplication.data.remote.RemoteDataSource
 import com.example.foodorderingapplication.utils.performAuthTokenNetworkOperation
 import com.example.foodorderingapplication.utils.performNetworkOperation
 import javax.inject.Inject
@@ -19,6 +20,15 @@ class ApiRepository @Inject constructor(
     fun login(request: LoginRequest) = performAuthTokenNetworkOperation(
         call = {
             remoteDataSource.postLogin(request)
+        },
+        saveToken = {
+            localDataSource.saveToken(it)
+        }
+    )
+
+    fun register(request: RegisterRequest) = performAuthTokenNetworkOperation(
+        call = {
+            remoteDataSource.postRegister(request)
         },
         saveToken = {
             localDataSource.saveToken(it)

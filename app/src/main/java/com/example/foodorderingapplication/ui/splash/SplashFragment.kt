@@ -20,7 +20,7 @@ class SplashFragment : Fragment() {
         Handler(Looper.getMainLooper()).postDelayed({
 
             if (onBoardingFinished()) {
-                val action = SplashFragmentDirections.actionSplashFragmentToRestaurantListFragment()
+                val action = SplashFragmentDirections.actionSplashFragmentToLoginFragment()
                 findNavController().navigate(action)
             } else {
                 val action = SplashFragmentDirections.actionSplashFragmentToOnboardingFragment()
