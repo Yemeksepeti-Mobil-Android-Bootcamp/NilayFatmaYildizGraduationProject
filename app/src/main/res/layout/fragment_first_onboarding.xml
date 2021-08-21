@@ -45,7 +45,7 @@
         android:layout_marginTop="80dp"
         android:fontFamily="@font/open_sans_regular"
         android:text="@string/choose_the_food_you_want_to_eat_from_the_restaurant_of_your_choice"
-        android:textColor="@color/text"
+        android:textColor="@color/gray"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

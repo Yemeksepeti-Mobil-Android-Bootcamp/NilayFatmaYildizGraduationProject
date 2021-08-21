@@ -4,20 +4,10 @@
         android:id="@+id/restaurantListFragment"
         android:enabled="true"
         android:icon="@drawable/order"
-        android:title="Order"/>
-    <item
-        android:id="@+id/searchFragment"
-        android:enabled="true"
-        android:icon="@drawable/search"
-        android:title="Search"/>
+        android:title="Main Page"/>
     <item
         android:id="@+id/orderFragment"
         android:enabled="true"
         android:icon="@drawable/basket"
-        android:title="My Basket"/>
-    <item
-        android:id="@+id/othersFragment"
-        android:enabled="true"
-        android:icon="@drawable/other"
-        android:title="Other"/>
+        android:title="Orders"/>
 </menu>

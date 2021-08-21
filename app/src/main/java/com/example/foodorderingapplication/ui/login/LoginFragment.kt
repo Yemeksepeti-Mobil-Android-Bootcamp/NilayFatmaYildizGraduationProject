@@ -40,10 +40,10 @@ class LoginFragment : Fragment() {
                 when (it.status) {
 
                     Resource.Status.LOADING -> {
-                        _binding.progressBar.gone()
+                        _binding.progressBar.show()
                     }
                     Resource.Status.SUCCESS -> {
-                        _binding.progressBar.show()
+                        _binding.progressBar.gone()
                             val action=LoginFragmentDirections.actionLoginFragmentToRestaurantListFragment()
                             findNavController().navigate(action)
                         }

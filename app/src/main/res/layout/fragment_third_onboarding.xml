@@ -45,7 +45,7 @@
         android:layout_marginTop="80dp"
         android:fontFamily="@font/open_sans_regular"
         android:text="@string/enjoy_the_food_delivered_to_your_door"
-        android:textColor="@color/text"
+        android:textColor="@color/gray"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

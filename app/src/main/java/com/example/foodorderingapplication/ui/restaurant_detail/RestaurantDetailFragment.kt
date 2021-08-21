@@ -50,7 +50,6 @@ class RestaurantDetailFragment: Fragment(){
                 }
                 Resource.Status.SUCCESS -> {
                     _binding.progressBar.gone()
-                    Log.v("MeallList", "${it.data}")
 
                     val restaurant = it.data!!.data
                     val options = RequestOptions().placeholder(R.mipmap.ic_launcher)
@@ -59,6 +58,7 @@ class RestaurantDetailFragment: Fragment(){
                         .load(restaurant.image).into(_binding.imageViewRestaurant)
                     _binding.textViewRestaurantlName.text = restaurant.name
                     _binding.textViewRestaurantlAddress.text=restaurant.district
+                    _binding.textViewMenu.text = "Menu"
                     mealListAdapter.setData(restaurant.meals)
                     initViews()
                 }

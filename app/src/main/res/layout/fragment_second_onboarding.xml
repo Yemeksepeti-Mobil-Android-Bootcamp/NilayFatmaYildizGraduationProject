@@ -45,7 +45,7 @@
         android:layout_marginTop="80dp"
         android:fontFamily="@font/open_sans_regular"
         android:text="@string/your_orders_right_at_your_door_with_fast_delivery"
-        android:textColor="@color/text"
+        android:textColor="@color/gray"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

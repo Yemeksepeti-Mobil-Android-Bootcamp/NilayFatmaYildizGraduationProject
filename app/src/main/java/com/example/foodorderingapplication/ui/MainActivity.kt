@@ -11,7 +11,6 @@ import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
 import com.example.foodorderingapplication.R
 import com.example.foodorderingapplication.ui.restaurant_list.RestaurantListFragment
-import com.example.foodorderingapplication.ui.search.SearchFragment
 import com.example.foodorderingapplication.ui.splash.SplashFragment
 import com.example.foodorderingapplication.utils.hide
 import com.example.foodorderingapplication.utils.show
@@ -37,8 +36,6 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.splashFragment -> bottomNav.hide()
-                R.id.restaurantDetailFragment->bottomNav.hide()
-                R.id.mealDetailFragment->bottomNav.hide()
                 R.id.onboardingFragment->bottomNav.hide()
                 R.id.loginFragment->bottomNav.hide()
                 R.id.registerFragment->bottomNav.hide()

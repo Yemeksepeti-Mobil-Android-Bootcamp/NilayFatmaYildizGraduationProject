@@ -130,7 +130,6 @@ class RestaurantListFragment : Fragment() {
     private fun addCuisineTypesListener() {
         cuisineList.forEach { cuisine ->
             cuisine.value.setOnClickListener {
-                //clear other text color
                 cuisineList.values.forEach { cuisine ->
 
                 }

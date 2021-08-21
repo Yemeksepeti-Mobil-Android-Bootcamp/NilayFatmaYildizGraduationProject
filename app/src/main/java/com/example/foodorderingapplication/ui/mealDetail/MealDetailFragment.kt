@@ -23,10 +23,10 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 
 @AndroidEntryPoint
 class MealDetailFragment : Fragment() {
-
     private val args: MealDetailFragmentArgs by navArgs()
     private val viewModel: MealDetailsViewModel by viewModels()
     private lateinit var _binding: FragmentMealDetailBinding
+    private var adapter: MealIngredientsAdapter = MealIngredientsAdapter()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -62,11 +62,11 @@ class MealDetailFragment : Fragment() {
                         .load(meal.image).into(_binding.mealImageView)
                     _binding.mealNameTextView.text = meal.name
                     _binding.ingredientsRecyclerView.layoutManager = LinearLayoutManager(context)
-                    //  adapter.setIngredients(meal.ingredients)
-                    // _binding.ingredientsRecyclerView.adapter = adapter
-                    _binding.priceTextView.text = meal.price
-
-                    //_binding.homeTextView.text = "Count: ${it.data?.characters?.size}
+                    adapter.setIngredients(meal.ingredients)
+                    _binding.ingredientsRecyclerView.adapter = adapter
+                    _binding.priceValueTextView.text = meal.price + " $"
+                    _binding.priceTextView.text = "Price:"
+                    _binding.mealIngredientsTextView.text = "Ingredients"
 
                 }
                 Resource.Status.ERROR -> {
@@ -79,28 +79,19 @@ class MealDetailFragment : Fragment() {
     private fun setLoading(isLoading: Boolean) {
         if (isLoading) {
             _binding.progressBar.show()
-            _binding.backButton.gone()
             _binding.mealImageView.gone()
             _binding.orderButton.gone()
             _binding.mealNameTextView.gone()
-            _binding.totalLinearLayout.gone()
 
         } else {
             _binding.progressBar.gone()
-            _binding.backButton.show()
             _binding.mealImageView.show()
             _binding.orderButton.show()
             _binding.mealNameTextView.show()
-            _binding.totalLinearLayout.show()
         }
     }
 
     private fun initListener() {
-        _binding.backButton.setOnClickListener {
-            findNavController().popBackStack()
-        }
-
-
 
         _binding.orderButton.setOnClickListener {
             val orderAddRequest = OrderAddRequest(args.restaurantId, args.mealId)
@@ -114,9 +105,7 @@ class MealDetailFragment : Fragment() {
                     Resource.Status.SUCCESS -> {
                         setLoading(false)
                         _binding.ingredientsRecyclerView.show()
-                        val action =
-                            MealDetailFragmentDirections.actionMealDetailFragmentToOrderFragment()
-                            findNavController().navigate(action)
+                        findNavController().navigate(MealDetailFragmentDirections.actionMealDetailFragmentToRestaurantListFragment())
 
                     }
                     Resource.Status.ERROR -> {
@@ -128,4 +117,5 @@ class MealDetailFragment : Fragment() {
         }
 
     }
+
 }

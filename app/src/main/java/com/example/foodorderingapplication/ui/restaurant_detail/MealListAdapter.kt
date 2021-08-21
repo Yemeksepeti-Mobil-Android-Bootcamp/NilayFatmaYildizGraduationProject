@@ -21,7 +21,7 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
 
         fun bind(MealItem: Meal, listener: IMealClickListener?) {
             binding.mealName.text = MealItem.name
-            binding.mealPrice.text = MealItem.price
+            binding.mealPrice.text = MealItem.price + " $"
             Glide.with(binding.mealImageView.context)
                 .load(MealItem.image).into(binding.mealImageView)
             binding.itemMealCardView.setOnClickListener { listener?.onClick(MealItem) }

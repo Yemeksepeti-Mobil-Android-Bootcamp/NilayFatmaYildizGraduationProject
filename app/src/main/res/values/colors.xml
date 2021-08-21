@@ -5,16 +5,14 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="yellow">#FFD600</color>
-    <color name="orange">#FF6E40</color>
-    <color name="red">#CC0000</color>
-    <color name="card_background">#FFDC8F</color>
-    <color name="restaurant_card">#F6E6C2</color>
+    <color name="red">#DD2C00</color>
+    <color name="light_yellow">#FBF6D8</color>
+    <color name="orange">#FF6D00</color>
+    <color name="yellow_background">#F8CC6C</color>
+    <color name="background">#F6E6C2</color>
     <color name="backgroundOnboarding">#FBE9BB</color>
-    <color name="text">#4D4C4C</color>
-    <color name="text2">#807C7C</color>
+    <color name="gray">#4D4C4C</color>
     <color name="light_background">#EFEFEF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background">#FEF9EE</color>
 </resources>

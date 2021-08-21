@@ -55,6 +55,7 @@ class RegisterFragment : Fragment() {
                             }
 
                         Resource.Status.ERROR -> {
+                            _binding.progressBar.gone()
                             Log.v("Error","Error")
                         }
                         }
