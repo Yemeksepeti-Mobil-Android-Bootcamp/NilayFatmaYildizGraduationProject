@@ -15,7 +15,7 @@ class OrderFragmentAdapter: RecyclerView.Adapter<OrderFragmentAdapter.OrdersView
     class OrdersViewHolder(val binding: ItemOrderBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        @SuppressLint("SimpleDateFormat")
+        @SuppressLint("SimpleDateFormat", "SetTextI18n")
         fun bind(order: Order) {
             binding.ordersItemRestaurantNameTextView.text = order.restaurant.name
             Glide.with(binding.ordersImageView.context)
@@ -23,7 +23,7 @@ class OrderFragmentAdapter: RecyclerView.Adapter<OrderFragmentAdapter.OrdersView
             binding.ordersItemFoodNameTextView.text = order.meal.name
             binding.ordersItemDateTextView.text =
                 SimpleDateFormat("dd/MM/yyyy").format(order.createdDate).toString()
-            binding.orderPriceTextView.text = order.meal.price.toString()
+            binding.orderPriceTextView.text = order.meal.price + "$"
         }
 
     }

@@ -72,12 +72,10 @@
 
             <EditText
                 android:id="@+id/registerNameTextView"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="35dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="35dp"
-                android:layout_weight="15"
+                android:layout_weight="5"
                 android:background="@drawable/et_border"
                 android:drawableStart="@drawable/ic_user"
                 android:drawablePadding="10dp"
@@ -98,12 +96,10 @@
 
             <EditText
                 android:id="@+id/registerEmailTextView"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="35dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="35dp"
-                android:layout_weight="15"
+                android:layout_weight="5"
                 android:background="@drawable/et_border"
                 android:drawableStart="@drawable/ic_message"
                 android:drawablePadding="10dp"
@@ -124,11 +120,9 @@
 
             <EditText
                 android:id="@+id/registerPasswordTextView"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="35dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="35dp"
                 android:layout_weight="5"
                 android:background="@drawable/et_border"
                 android:backgroundTint="@color/white"
@@ -147,12 +141,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center" />
 
         </LinearLayout>
 

@@ -40,15 +40,12 @@ class LoginFragment : Fragment() {
                 when (it.status) {
 
                     Resource.Status.LOADING -> {
-                        _binding.progressBar.show()
                     }
                     Resource.Status.SUCCESS -> {
-                        _binding.progressBar.gone()
                             val action=LoginFragmentDirections.actionLoginFragmentToRestaurantListFragment()
                             findNavController().navigate(action)
                         }
                     Resource.Status.ERROR -> {
-                        _binding.progressBar.gone()
                         val dialog = AlertDialog.Builder(context)
                             .setTitle("Error")
                             .setMessage("${it.message}")

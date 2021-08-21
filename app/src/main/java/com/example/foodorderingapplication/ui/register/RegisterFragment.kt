@@ -43,10 +43,8 @@ class RegisterFragment : Fragment() {
                 .observe(viewLifecycleOwner, Observer {
                     when (it.status) {
                         Resource.Status.LOADING -> {
-                            _binding.progressBar.show()
                         }
                         Resource.Status.SUCCESS -> {
-                            _binding.progressBar.gone()
 
                             val action =
                                 RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
@@ -55,7 +53,6 @@ class RegisterFragment : Fragment() {
                             }
 
                         Resource.Status.ERROR -> {
-                            _binding.progressBar.gone()
                             Log.v("Error","Error")
                         }
                         }

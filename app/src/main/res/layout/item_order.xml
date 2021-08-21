@@ -4,136 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:layout_marginVertical="16dp"
-    app:cardCornerRadius="30dp"
-    >
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp"
+    android:backgroundTint="@color/light_yellow"
+    app:contentPadding="5dp"
+    app:cardElevation="10dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+    <TextView
+        android:id="@+id/ordersItemRestaurantNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/open_sans_regular"
+        android:textColor="@color/gray"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/ordersImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Restaurant Name" />
 
-        <TextView
-            android:id="@+id/ordersItemRestaurantNameTextView"
-            android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ordersItemDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="230dp"
+        android:textSize="15sp"
+        android:textColor="@color/gray"
+        tools:text="24.07.2021 -15:07" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/white"
+        app:cardCornerRadius="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/ordersImageView"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Ali Usta'nın Yeri" />
+            android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/ordersItemDateTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@id/ordersItemRestaurantNameTextView"
-            app:layout_constraintTop_toBottomOf="@id/ordersItemRestaurantNameTextView"
-            tools:text="24.07.2021 -15:07" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_gravity="center"
+                android:background="@color/gray"
+                app:cardCornerRadius="75dp">
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="260dp"
-            android:layout_height="0.1dp"
-            android:layout_marginTop="7dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.589"
-            app:layout_constraintStart_toEndOf="@id/ordersImageView"
-            app:layout_constraintTop_toBottomOf="@id/ordersItemDateTextView" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ordersImageView"
+                    android:layout_width="120dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:background="#FAF8F8"/>
 
-        <TextView
-            android:id="@+id/ordersItemFoodNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:paddingVertical="8dp"
-            app:layout_constraintStart_toStartOf="@id/ordersItemDateTextView"
-            app:layout_constraintTop_toBottomOf="@id/ordersItemDateTextView"
-            tools:text="Veggie tomato mix" />
-
-        <View
-            android:id="@+id/view2"
-            android:layout_width="260dp"
-            android:layout_height="0.1dp"
-            android:layout_marginTop="7dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ordersImageView"
-            app:layout_constraintTop_toBottomOf="@id/ordersItemFoodNameTextView" />
+            </androidx.cardview.widget.CardView>
 
 
-        <TextView
-            android:id="@+id/text4"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:paddingVertical="8dp"
-            app:layout_constraintStart_toStartOf="@id/ordersItemFoodNameTextView"
-            app:layout_constraintTop_toBottomOf="@id/view2"
-            android:text="Total" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="12dp"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/ordersItemFoodNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Meal Name"
+                    android:textColor="@color/gray"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:textSize="20sp"/>
 
 
-        <TextView
-            android:id="@+id/orderPriceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:paddingVertical="8dp"
-            app:layout_constraintStart_toEndOf="@id/text4"
-            app:layout_constraintTop_toBottomOf="@id/view2"
-            tools:text="45,50 TL" />
+                <TextView
+                    android:id="@+id/orderPriceTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/gray"
+                    android:fontFamily="@font/open_sans_regular"
+                    tools:text="Meal Price $" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ordersImageView"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_margin="10dp"
-            android:layout_marginStart="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/ordersRepeatButton"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:enabled="false"
-            android:text="Reorder"
-            android:textColor="@color/orange"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ordersInfoButton"
-            app:layout_constraintTop_toBottomOf="@id/orderPriceTextView" />
+            </LinearLayout>
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/ordersInfoButton"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginEnd="16dp"
-            android:enabled="false"
-            android:text="Detail"
-            android:textColor="@color/orange"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/text4"
-            app:layout_constraintTop_toBottomOf="@id/text4" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.cardview.widget.CardView>

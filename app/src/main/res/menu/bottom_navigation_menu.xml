@@ -10,4 +10,9 @@
         android:enabled="true"
         android:icon="@drawable/basket"
         android:title="Orders"/>
+    <item
+        android:id="@+id/profileFragment"
+        android:enabled="true"
+        android:icon="@drawable/user"
+        android:title="Profile"/>
 </menu>

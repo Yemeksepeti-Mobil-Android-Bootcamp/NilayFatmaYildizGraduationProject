@@ -105,7 +105,8 @@ class MealDetailFragment : Fragment() {
                     Resource.Status.SUCCESS -> {
                         setLoading(false)
                         _binding.ingredientsRecyclerView.show()
-                        findNavController().navigate(MealDetailFragmentDirections.actionMealDetailFragmentToRestaurantListFragment())
+                        val action = MealDetailFragmentDirections.actionMealDetailFragmentToOrderFragment()
+                        findNavController().navigate(action)
 
                     }
                     Resource.Status.ERROR -> {
