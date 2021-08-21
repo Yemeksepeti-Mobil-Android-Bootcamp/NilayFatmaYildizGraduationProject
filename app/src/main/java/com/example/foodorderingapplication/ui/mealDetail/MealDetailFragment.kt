@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -19,7 +20,6 @@ import com.example.foodorderingapplication.utils.Resource
 import com.example.foodorderingapplication.utils.gone
 import com.example.foodorderingapplication.utils.show
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
 
 @AndroidEntryPoint
 class MealDetailFragment : Fragment() {
@@ -49,24 +49,19 @@ class MealDetailFragment : Fragment() {
         viewModel.getMealDetails(args.mealId).observe(viewLifecycleOwner, {
             when (it.status) {
                 Resource.Status.LOADING -> {
-                    Log.e("Loading", "loading")
                     setLoading(true)
                 }
                 Resource.Status.SUCCESS -> {
                     setLoading(false)
                     val meal = it.data!!.data
                     viewModel.meal = meal
-                    val options = RequestOptions().placeholder(R.mipmap.ic_launcher)
                     Glide.with(_binding.mealImageView.context)
-                        .applyDefaultRequestOptions(options)
                         .load(meal.image).into(_binding.mealImageView)
                     _binding.mealNameTextView.text = meal.name
                     _binding.ingredientsRecyclerView.layoutManager = LinearLayoutManager(context)
                     adapter.setIngredients(meal.ingredients)
                     _binding.ingredientsRecyclerView.adapter = adapter
                     _binding.priceValueTextView.text = meal.price + " $"
-                    _binding.priceTextView.text = "Price:"
-                    _binding.mealIngredientsTextView.text = "Ingredients"
 
                 }
                 Resource.Status.ERROR -> {
@@ -78,12 +73,18 @@ class MealDetailFragment : Fragment() {
 
     private fun setLoading(isLoading: Boolean) {
         if (isLoading) {
+            _binding.mealIngredientsTextView.gone()
+            _binding.ingredientsRecyclerView.gone()
+            _binding.priceValueTextView.gone()
             _binding.progressBar.show()
             _binding.mealImageView.gone()
             _binding.orderButton.gone()
             _binding.mealNameTextView.gone()
 
         } else {
+            _binding.mealIngredientsTextView.show()
+            _binding.ingredientsRecyclerView.show()
+            _binding.priceValueTextView.show()
             _binding.progressBar.gone()
             _binding.mealImageView.show()
             _binding.orderButton.show()
@@ -98,13 +99,10 @@ class MealDetailFragment : Fragment() {
             viewModel.postOrder(orderAddRequest).observe(viewLifecycleOwner, {
                 when (it.status) {
                     Resource.Status.LOADING -> {
-                        Log.e("Loading", "loading")
                         setLoading(true)
-                        _binding.ingredientsRecyclerView.gone()
                     }
                     Resource.Status.SUCCESS -> {
                         setLoading(false)
-                        _binding.ingredientsRecyclerView.show()
                         val action = MealDetailFragmentDirections.actionMealDetailFragmentToOrderFragment()
                         findNavController().navigate(action)
 

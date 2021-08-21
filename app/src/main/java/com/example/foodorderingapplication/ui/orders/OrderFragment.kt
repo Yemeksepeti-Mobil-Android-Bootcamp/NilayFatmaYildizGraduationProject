@@ -1,14 +1,12 @@
 package com.example.foodorderingapplication.ui.orders
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.foodorderingapplication.R
 import com.example.foodorderingapplication.databinding.FragmentOrderBinding
 import com.example.foodorderingapplication.utils.Resource
 import com.example.foodorderingapplication.utils.gone
@@ -44,23 +42,32 @@ class OrderFragment : Fragment() {
         viewModel.getOrders().observe(viewLifecycleOwner, {
             when (it.status) {
                 Resource.Status.LOADING -> {
-                    binding?.progressBar?.show()
+                    setLoading(true)
                 }
                 Resource.Status.SUCCESS -> {
                     it.data?.orderList?.let {
                         binding?.orderRecyclerView?.layoutManager = LinearLayoutManager(context)
                         binding?.orderRecyclerView?.adapter = adapter
                         adapter.setData(it)
-                        binding?.progressBar?.gone()
+                        setLoading(false)
                     }
 
                 }
 
                 Resource.Status.ERROR -> {
-                    binding?.progressBar?.gone()
+                    setLoading(false)
                 }
             }
         })
     }
 
+    private fun setLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding?.progressBar?.show()
+            binding?.orderRecyclerView?.gone()
+        } else {
+            binding?.progressBar?.gone()
+            binding?.orderRecyclerView?.show()
+        }
+    }
 }

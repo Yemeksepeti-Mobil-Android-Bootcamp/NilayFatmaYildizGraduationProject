@@ -1,7 +1,6 @@
 package com.example.foodorderingapplication.ui.profile
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.foodorderingapplication.R
 import com.example.foodorderingapplication.data.entity.User
 import com.example.foodorderingapplication.databinding.FragmentProfileBinding
 import com.example.foodorderingapplication.utils.Resource
@@ -58,10 +56,10 @@ class ProfileFragment : Fragment() {
     }
 
     private fun setInformations(user: User?) {
-        _binding.nameTextView.text = user?.name
-        _binding.emailTextView.text = user?.email
-        _binding.phoneNumberTextView.text = "0555 555 55 55"
-        _binding.addressTextView.text = "Istanbul"
+        _binding.userNameTextView.text = user?.name
+        _binding.userEmailTextView.text = user?.email
+        _binding.userPhoneNumberTextView.text = "0555 555 55 55"
+        _binding.userAddressTextView.text = "Istanbul"
     }
 
     private fun addListeners() {

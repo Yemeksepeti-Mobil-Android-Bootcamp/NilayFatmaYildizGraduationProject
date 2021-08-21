@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -25,7 +24,6 @@ import com.example.foodorderingapplication.ui.restaurant_onboarding.ThirdOfferFr
 import com.example.foodorderingapplication.utils.Resource
 import com.example.foodorderingapplication.utils.gone
 import com.example.foodorderingapplication.utils.show
-import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -130,16 +128,12 @@ class RestaurantListFragment : Fragment() {
     private fun addCuisineTypesListener() {
         cuisineList.forEach { cuisine ->
             cuisine.value.setOnClickListener {
-                cuisineList.values.forEach { cuisine ->
-
-                }
                 _binding.searchView.queryHint = "Search in ${cuisine.key}"
                 _binding.searchView.onActionViewCollapsed()
                 if (cuisine.key == getString(R.string.all_restaurants))
                     getRestaurantList()
                 else
-                    sendCuisineRequest(cuisine.key)
-            }
+                    sendCuisineRequest(cuisine.key) }
         }
     }
 

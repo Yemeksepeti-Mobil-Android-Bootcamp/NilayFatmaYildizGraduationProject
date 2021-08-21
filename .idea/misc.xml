@@ -10,6 +10,7 @@
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/drawable/et_border.xml" value="0.2203125" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/drawable/et_border2.xml" value="0.2203125" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/drawable/et_border_yellow.xml" value="0.1125" />
+        <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/drawable/ic_lock.xml" value="0.1675925925925926" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/drawable/ic_message.xml" value="0.2203125" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/drawable/ic_user.xml" value="0.2203125" />
@@ -19,7 +20,7 @@
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_first_offer.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_first_onboarding.xml" value="0.2" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_login.xml" value="0.22" />
-        <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_meal_detail.xml" value="0.25" />
+        <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_meal_detail.xml" value="0.22" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_onboarding.xml" value="0.18" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_order.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nilay/AndroidStudioProjects/FoodOrderingApplication/FoodOrderingApplication/app/src/main/res/layout/fragment_others.xml" value="0.20416666666666666" />

@@ -18,10 +18,10 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.Restaur
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(RestaurantItem: Restaurant, listener: IRestaurantClickListener?) {
-            binding.restaurantName.text = RestaurantItem.name
-            binding.restaurantAddress.text = RestaurantItem.district
-            Glide.with(binding.restaurantImageView.context)
-                .load(RestaurantItem.image).into(binding.restaurantImageView)
+            binding.textViewRestaurantName.text = RestaurantItem.name
+            binding.textViewRestaurantAddress.text = RestaurantItem.district
+            Glide.with(binding.imageViewRestaurant.context)
+                .load(RestaurantItem.image).into(binding.imageViewRestaurant)
             binding.itemRestaurantCardView.setOnClickListener { listener?.onClick(RestaurantItem) }
         }
     }

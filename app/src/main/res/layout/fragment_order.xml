@@ -8,7 +8,7 @@
     tools:context=".ui.orders.OrderFragment">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/orderCardView"
         android:layout_width="match_parent"
         android:layout_height="800dp"
         android:layout_marginTop="180dp"
@@ -37,7 +37,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/cardViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -50,13 +50,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/textViewOrders"
             android:layout_width="300dp"
             android:layout_height="80dp"
             android:fontFamily="@font/open_sans_semi_bold_italic"
             android:gravity="center"
-            android:text="Orders"
+            android:text="@string/orders"
             android:textColor="@color/white"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
 
     </androidx.cardview.widget.CardView>
 

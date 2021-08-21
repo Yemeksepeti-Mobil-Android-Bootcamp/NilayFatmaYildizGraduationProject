@@ -8,7 +8,7 @@
     tools:context=".ui.login.LoginFragment">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/itemFoodCardView"
+        android:id="@+id/registerCardView"
         android:layout_width="match_parent"
         android:layout_height="450dp"
         android:layout_gravity="center_horizontal"
@@ -37,7 +37,7 @@
                 android:id="@+id/registerIcon"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
                 android:src="@drawable/register_card" />
 
             <TextView
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:fontFamily="@font/open_sans_bold"
                 android:text="@string/register"
                 android:textColor="@color/gray"
@@ -59,7 +59,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textViewRegisterInfo"
+                android:id="@+id/textViewEnterInformation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -71,7 +71,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/registerNameTextView"
+                android:id="@+id/registerFullNameTextView"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -81,7 +81,7 @@
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/poppins_light"
                 android:backgroundTint="@color/white"
-                android:hint="@string/name"
+                android:hint="@string/full_name"
                 android:inputType="textPersonName"
                 android:padding="15dp"
                 android:paddingStart="20dp"
@@ -147,13 +147,13 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textViewHaveAnAccount"
+        android:id="@+id/textViewDoYouHaveAnAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_regular"
-        android:text="Do you have an account?"
+        android:text="@string/do_you_have_an_account"
         android:textAlignment="center"
         android:textColor="@color/gray"
         android:textSize="16sp"

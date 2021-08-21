@@ -31,12 +31,12 @@
         app:progressMode="true" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewDiscoverRestaurant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="Discover Restaurants"
+        android:text="@string/discover_restaurants"
         android:textColor="@color/yellow_background"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,14 +51,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/textViewDiscoverRestaurant">
 
         <LinearLayout
+            android:id="@+id/linearLayoutMainPage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/searchBarCardView"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -76,6 +78,7 @@
 
 
             <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -95,6 +98,7 @@
             </HorizontalScrollView>
 
             <FrameLayout
+                android:id="@+id/recyclerViewFrameLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp">
@@ -123,7 +127,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Response_not_found"
+                        android:text="@string/response_not_found"
                         android:textAlignment="center"
                         android:textSize="20sp" />
                 </LinearLayout>

@@ -17,13 +17,13 @@ class OrderFragmentAdapter: RecyclerView.Adapter<OrderFragmentAdapter.OrdersView
 
         @SuppressLint("SimpleDateFormat", "SetTextI18n")
         fun bind(order: Order) {
-            binding.ordersItemRestaurantNameTextView.text = order.restaurant.name
-            Glide.with(binding.ordersImageView.context)
-                .load(order.meal.image).into(binding.ordersImageView)
-            binding.ordersItemFoodNameTextView.text = order.meal.name
-            binding.ordersItemDateTextView.text =
+            binding.textViewOrderRestaurantName.text = order.restaurant.name
+            Glide.with(binding.imageViewOrderMeal.context)
+                .load(order.meal.image).into(binding.imageViewOrderMeal)
+            binding.textViewOrderMealName.text = order.meal.name
+            binding.textViewOrderDate.text =
                 SimpleDateFormat("dd/MM/yyyy").format(order.createdDate).toString()
-            binding.orderPriceTextView.text = order.meal.price + "$"
+            binding.textViewOrderMealPrice.text = order.meal.price + "$"
         }
 
     }

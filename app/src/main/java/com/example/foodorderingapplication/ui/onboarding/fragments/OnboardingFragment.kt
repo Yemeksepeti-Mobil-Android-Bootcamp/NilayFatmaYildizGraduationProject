@@ -51,7 +51,7 @@ class OnboardingFragment : Fragment() {
                     binding.nextButton.text = resources.getText(R.string.finish)
                     binding.nextButton.setOnClickListener {
                         val action =
-                            OnboardingFragmentDirections.actionOnboardingFragmentToRestaurantListFragment()
+                            OnboardingFragmentDirections.actionOnboardingFragmentToLoginFragment()
                         findNavController().navigate(action)
                         onBoardingFinished()
                     }

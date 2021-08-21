@@ -11,8 +11,6 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.foodorderingapplication.databinding.FragmentLoginBinding
 import com.example.foodorderingapplication.utils.Resource
-import com.example.foodorderingapplication.utils.gone
-import com.example.foodorderingapplication.utils.show
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,6 +40,7 @@ class LoginFragment : Fragment() {
                     Resource.Status.LOADING -> {
                     }
                     Resource.Status.SUCCESS -> {
+                        viewGones()
                             val action=LoginFragmentDirections.actionLoginFragmentToRestaurantListFragment()
                             findNavController().navigate(action)
                         }
@@ -65,4 +64,15 @@ class LoginFragment : Fragment() {
         }
     }
 
+    private fun viewGones(){
+        _binding.itemLoginCardView.visibility = View.GONE
+        _binding.loginIcon.visibility = View.GONE
+        _binding.loginEmailTextView.visibility = View.GONE
+        _binding.textSignIn.visibility=View.GONE
+        _binding.textViewDontHaveAnAccount.visibility=View.GONE
+        _binding.textViewEnterAccount.visibility=View.GONE
+        _binding.loginPasswordTextView.visibility = View.GONE
+        _binding.buttonRegister.visibility=View.GONE
+        _binding.buttonLogin.visibility = View.GONE
+    }
 }

@@ -4,8 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.example.foodorderingapplication.R
 import com.example.foodorderingapplication.data.entity.meal.Meal
 import com.example.foodorderingapplication.databinding.ItemMealBinding
 import com.example.foodorderingapplication.ui.listeners.IMealClickListener
@@ -20,8 +18,8 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(MealItem: Meal, listener: IMealClickListener?) {
-            binding.mealName.text = MealItem.name
-            binding.mealPrice.text = MealItem.price + " $"
+            binding.textViewMealName.text = MealItem.name
+            binding.textViewMealPrice.text = MealItem.price + " $"
             Glide.with(binding.mealImageView.context)
                 .load(MealItem.image).into(binding.mealImageView)
             binding.itemMealCardView.setOnClickListener { listener?.onClick(MealItem) }

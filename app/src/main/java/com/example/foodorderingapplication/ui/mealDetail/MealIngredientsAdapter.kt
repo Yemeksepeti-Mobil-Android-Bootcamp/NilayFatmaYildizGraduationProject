@@ -1,25 +1,20 @@
 package com.example.foodorderingapplication.ui.mealDetail
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.foodorderingapplication.R
+import com.example.foodorderingapplication.databinding.ItemIngredientBinding
 
 class MealIngredientsAdapter :
     RecyclerView.Adapter<MealIngredientsAdapter.MealIngredientsViewHolder>() {
 
     private var ingredients = ArrayList<String>()
 
-    class MealIngredientsViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
-        private val ingredientTextView: TextView = view.findViewById(R.id.ingredientTextView)
+    class MealIngredientsViewHolder(val binding: ItemIngredientBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun setIngredient(ingredient: String) {
-
-
-            ingredientTextView.text = ingredient
-
+            binding.ingredientTextView.text = ingredient
         }
     }
 
@@ -30,9 +25,13 @@ class MealIngredientsAdapter :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealIngredientsViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_ingredient, parent, false)
-        return MealIngredientsViewHolder(view)
+        return MealIngredientsAdapter.MealIngredientsViewHolder(
+            ItemIngredientBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: MealIngredientsViewHolder, position: Int) {

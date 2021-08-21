@@ -1,7 +1,6 @@
 package com.example.foodorderingapplication.ui.restaurant_detail
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.example.foodorderingapplication.R
 import com.example.foodorderingapplication.data.entity.meal.Meal
-import com.example.foodorderingapplication.data.entity.meal.MealResponse
-import com.example.foodorderingapplication.data.entity.restaurant.Restaurant
 import com.example.foodorderingapplication.databinding.FragmentRestaurantDetailBinding
 import com.example.foodorderingapplication.ui.listeners.IMealClickListener
 import com.example.foodorderingapplication.utils.Resource
@@ -47,17 +42,16 @@ class RestaurantDetailFragment: Fragment(){
             when (it.status) {
                 Resource.Status.LOADING -> {
                     _binding.progressBar.show()
+                    _binding.textViewMenu.gone()
                 }
                 Resource.Status.SUCCESS -> {
                     _binding.progressBar.gone()
 
                     val restaurant = it.data!!.data
-                    val options = RequestOptions().placeholder(R.mipmap.ic_launcher)
                     Glide.with(_binding.imageViewRestaurant.context)
-                        .applyDefaultRequestOptions(options)
                         .load(restaurant.image).into(_binding.imageViewRestaurant)
-                    _binding.textViewRestaurantlName.text = restaurant.name
-                    _binding.textViewRestaurantlAddress.text=restaurant.district
+                    _binding.textViewRestaurantName.text = restaurant.name
+                    _binding.textViewRestaurantAddress.text=restaurant.district
                     _binding.textViewMenu.text = "Menu"
                     mealListAdapter.setData(restaurant.meals)
                     initViews()
@@ -70,8 +64,8 @@ class RestaurantDetailFragment: Fragment(){
     }
 
     private fun initViews() {
-        _binding.mealsRecyclerView.adapter = mealListAdapter
-        _binding.mealsRecyclerView.layoutManager = LinearLayoutManager(context)
+        _binding.restaurantMenuRecyclerView.adapter = mealListAdapter
+        _binding.restaurantMenuRecyclerView.layoutManager = LinearLayoutManager(context)
         mealListAdapter.setMealOnClickListener(object:IMealClickListener{
             override fun onClick(name: Meal) {
                 val action =

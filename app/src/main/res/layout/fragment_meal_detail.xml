@@ -9,21 +9,22 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="600dp"
-        android:layout_height="500dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="90dp"
-        app:cardCornerRadius="75dp"
+        android:id="@+id/mealCardView"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="380dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/mealNameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="200dp"
+            android:layout_marginTop="485dp"
             android:fontFamily="@font/open_sans_semi_bold_italic"
             android:textAlignment="center"
             android:textColor="@color/yellow_background"
@@ -31,88 +32,26 @@
             tools:text="Name" />
 
         <TextView
-            android:id="@+id/mealIngredientsTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
-            android:layout_marginStart="150dp"
-            android:fontFamily="@font/open_sans_semi_bold_italic"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="25sp"
-            tools:text="Name" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ingredientsRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:layout_marginStart="310dp"/>
-
-        <TextView
-            android:id="@+id/priceTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="360dp"
-            android:layout_marginStart="70dp"
-            android:fontFamily="@font/open_sans_semi_bold_italic"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="23sp"
-            tools:text="Price:" />
-
-        <TextView
             android:id="@+id/priceValueTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="360dp"
-            android:layout_marginStart="180dp"
+            android:layout_marginTop="540dp"
             android:fontFamily="@font/open_sans_semi_bold_italic"
             android:textAlignment="center"
             android:textColor="@color/gray"
             android:textSize="23sp"
             tools:text="10$" />
 
-        <Button
-            android:id="@+id/orderButton"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginEnd="45dp"
-            android:layout_marginTop="410dp"
-            android:background="@drawable/et_border"
-            android:fontFamily="@font/open_sans_regular"
-            android:text="Order"
-            android:textAllCaps="false"
-            android:textColor="@color/gray"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:backgroundTint="@color/yellow_background"
-            app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
-            android:layout_marginStart="180dp"
-            android:layout_gravity="center_horizontal"/>
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/imageCardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/orange"
+        android:layout_marginTop="50dp"
         app:cardCornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -124,5 +63,61 @@
             android:scaleType="centerCrop" />
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/mealIngredientsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/open_sans_semi_bold_italic"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealCardView"
+        android:text="@string/ingredients" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ingredientsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealIngredientsTextView" />
+
+    <Button
+        android:id="@+id/orderButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/et_border"
+        android:fontFamily="@font/open_sans_regular"
+        android:text="@string/order"
+        android:textAllCaps="false"
+        android:textColor="@color/gray"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/yellow_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsRecyclerView" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

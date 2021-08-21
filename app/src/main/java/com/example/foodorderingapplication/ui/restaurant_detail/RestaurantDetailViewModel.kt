@@ -3,8 +3,6 @@ package com.example.foodorderingapplication.ui.restaurant_detail
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.example.foodorderingapplication.data.entity.meal.Meal
-import com.example.foodorderingapplication.data.entity.meal.MealResponse
 import com.example.foodorderingapplication.data.entity.restaurant.RestaurantResponse
 import com.example.foodorderingapplication.repository.ApiRepository
 import com.example.foodorderingapplication.utils.Resource
