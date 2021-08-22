@@ -35,7 +35,8 @@
             android:id="@+id/restaurantMenuRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_marginTop="110dp" />
+            android:layout_marginTop="110dp"
+            android:paddingBottom="50dp"/>
 
         <ProgressBar
             android:id="@+id/progressBar"

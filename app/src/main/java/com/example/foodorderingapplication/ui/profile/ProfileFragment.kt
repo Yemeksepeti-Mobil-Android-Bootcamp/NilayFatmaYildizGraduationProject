@@ -41,14 +41,15 @@ class ProfileFragment : Fragment() {
         viewModel.getUser().observe(viewLifecycleOwner, { response ->
             when (response.status) {
                 Resource.Status.LOADING -> {
-                    _binding.progressBar.show()
+                    setLoading(true)
+
                 }
                 Resource.Status.SUCCESS -> {
-                    _binding.progressBar.gone()
+                    setLoading(false)
                     setInformations(response.data?.user)
                 }
                 Resource.Status.ERROR -> {
-                    _binding.progressBar.gone()
+                    setLoading(false)
                     Toast.makeText(context, "Operation Failed", Toast.LENGTH_LONG).show()
                 }
             }
@@ -58,8 +59,8 @@ class ProfileFragment : Fragment() {
     private fun setInformations(user: User?) {
         _binding.userNameTextView.text = user?.name
         _binding.userEmailTextView.text = user?.email
-        _binding.userPhoneNumberTextView.text = "0555 555 55 55"
-        _binding.userAddressTextView.text = "Istanbul"
+        _binding.userPhoneNumberTextView.text = user?.phone
+        _binding.userAddressTextView.text = user?.address
     }
 
     private fun addListeners() {
@@ -68,6 +69,27 @@ class ProfileFragment : Fragment() {
             viewModel.logOut()
             val action=ProfileFragmentDirections.actionProfileFragmentToLoginFragment()
             findNavController().navigate(action)
+        }
+
+        _binding.buttonChangeProfile.setOnClickListener {
+            val action= ProfileFragmentDirections.actionProfileFragmentToSettingFragment()
+            findNavController().navigate(action)
+        }
+    }
+
+    private fun setLoading(isLoading: Boolean) {
+        if (isLoading) {
+            _binding?.progressBar?.show()
+            _binding?.buttonLogout?.gone()
+            _binding?.lineViewEmail?.gone()
+            _binding?.lineViewAddress?.gone()
+            _binding?.lineViewPhoneNumber?.gone()
+        } else {
+            _binding?.progressBar?.gone()
+            _binding?.buttonLogout?.show()
+            _binding?.lineViewEmail?.show()
+            _binding?.lineViewAddress?.show()
+            _binding?.lineViewPhoneNumber?.show()
         }
     }
 

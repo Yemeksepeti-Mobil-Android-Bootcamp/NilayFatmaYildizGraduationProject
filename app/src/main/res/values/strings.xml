@@ -32,13 +32,18 @@
     <string name="foodizone">Foodizone</string>
     <string name="response_not_found">Response_not_found</string>
     <string name="don_t_you_have_an_account">Don\'t you have an account?</string>
+    <string name="update_name">Update Name</string>
+    <string name="update_address">Update Address</string>
+    <string name="update_email">Update Email</string>
+    <string name="update_phone_number">Update Phone Number</string>
+    <string name="settings">Settings</string>
+    <string name="update_profile">Update Profile</string>
 
     <string-array name="Cuisines">
         <item>Burger</item>
         <item>Pizza</item>
-        <item>Pasta</item>
-        <item>Fish</item>
-        <item>Salad</item>
         <item>Dessert</item>
+        <item>Seafood</item>
+        <item>Pasta - Salad</item>
     </string-array>
 </resources>

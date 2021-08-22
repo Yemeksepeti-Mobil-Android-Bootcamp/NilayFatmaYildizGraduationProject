@@ -94,10 +94,9 @@ class RestaurantListFragment : Fragment() {
                 0->button.setImageResource(R.drawable.all)
                 1->button.setImageResource(R.drawable.burger)
                 2->button.setImageResource(R.drawable.pizza)
-                3->button.setImageResource(R.drawable.pasta)
+                3->button.setImageResource(R.drawable.dessert)
                 4->button.setImageResource(R.drawable.fish)
-                5->button.setImageResource(R.drawable.salad)
-                6->button.setImageResource(R.drawable.dessert)
+                5->button.setImageResource(R.drawable.pasta)
             }
 
             button.layoutParams = params
